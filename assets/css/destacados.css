@@ -1,0 +1,90 @@
+#destacados{
+    width: 100%;
+    color: var(--color-w);
+}
+
+#destacados [tag=c_destacados]{
+    display: flex;   
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+
+[tag^=container-circle]{
+    position: relative;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+}
+
+[tag^=img]{
+    position: absolute;
+    width: 210px;
+    height: 210px;
+}
+
+
+[tag=img] img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    top: 10px;
+    left: 10px;
+}
+
+
+[tag^=giro]{
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border: 10px solid var(--color-w);
+    border-right-color: var(--color-main);
+    border-bottom-color: var(--color-main);
+    border-radius: 50%;
+    transition: rotate 0.8s ease-in-out;
+}
+
+[tag=texto]{
+    width: 210px;
+    height: 210px;
+    position: absolute;
+    text-align: center;
+    border-radius: 100%;
+    top: 10px;
+    left: 10px;
+    background-color: #0006;
+    opacity: 0;
+    padding-top: 50px;
+}
+
+[tag=texto] h3{
+    margin: 0 auto;
+    width: 80%;
+    color: white;
+    border-bottom: 2px solid white;
+}
+[tag=texto] p{
+    margin-top: 10px;
+    color: white;
+
+}
+
+[tag=container-circle] a:hover [tag=giro]{
+    rotate: 180deg;
+}
+
+[tag=container-circle] a:hover [tag=texto]{
+    opacity: 1;
+}
+
+[tag="title-d"] {
+    font-size: 2.1rem;
+    color: orange;
+    margin: 20px 0px;
+}
+
+
+
+

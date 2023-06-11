@@ -1,0 +1,91 @@
+
+[tag=header] {
+    height: 170px;
+    background-color: var(--color-main);
+    position: relative;
+}
+
+[tag=cartel] {
+    box-sizing: border-box;
+    position: absolute;
+    top: 21px;
+    left: -70px;
+    background-color: var(--color-w);
+    color: var(--color-b);
+    width: 320px;
+    height: 50px;
+    rotate: -45deg;
+    display: flex;
+    align-items: center;
+    transition: border .3s ease-in;
+    border: 4px solid transparent;
+}
+
+[tag=cartel]:hover {
+    border: 4px solid var(--color-secund);
+}
+
+[tag=cartel]:hover [tag=text-cartel] {
+    transform-origin: center center;
+    transform: rotate(-1deg);
+}
+
+
+[tag=text-cartel] {
+    margin-left: 60px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-shadow: 1px 1px .5px var(--font-color-w);
+    width: 100%;
+}
+[tag=title] {
+    font-size: 3rem;
+    color: var(--color-w);
+    padding: 13px;
+    transform: skewX(-20deg);
+    transition: box-shadow .4s ease-in-out;
+}
+[tag=title]:hover {
+    box-shadow: 2px 3px 5px 6px var(--color-w);
+}
+
+[tag=logo]{
+    display: inline-block;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+}
+[tag=container-info] {
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    gap:0 100px;
+    padding-top: 10px;
+}
+
+[tag=container] {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 0 36px;
+    margin-top: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+[tag=container] a{
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--color-w);
+    padding: 4px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: all .2s ease-in;
+}
+
+[tag=container] a:hover{
+    color: var(--color-w);
+    text-shadow: 1px 1px solid var(--color-secund);
+    background-color: var(--color-main-2);
+}

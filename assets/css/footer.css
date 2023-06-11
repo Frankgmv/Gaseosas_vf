@@ -1,0 +1,45 @@
+[tag="c_contacto"]{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px;
+}
+[tag="mapa"],[tag="contactos"]{
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+
+[tag="mapa"]{
+    height: 280px;
+    width: 500px;
+}
+
+[tag="contactos"]{
+    height: 130px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+
+}
+
+[tag="contactos"] a{
+    text-align: center;
+    padding-top: 5px;
+    text-decoration: none;
+    font-size: 22px;
+    width: 40%;
+    height: 40px;
+    color: var(--color-w);
+    transition: all .2s ease-in-out;
+    font-weight: bold;
+    border-radius: 12px;
+}
+
+[tag="contactos"] a:hover{
+    color: var(--color-main);
+    box-shadow: 0 0 2px 4px var(--color-w);
+}
