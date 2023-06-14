@@ -28,7 +28,7 @@
     background-color: var(--color-w);
     overflow: hidden;
     border-radius: 20px;
-    transition: box-shadow .15s ease-in-out ;
+    transition: box-shadow .15s ease-in-out;
 }
 
 [tag=c_productos] [tag=producto]:hover {
@@ -84,18 +84,43 @@ p {
 
 [tag=texto2] h2 {
     font-size: 1.5rem;
-    margin: 5px auto;
+    margin: 3px auto;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 [tag=texto2] p {
     font-size: 1rem;
     margin: 10px 5px;
+    text-align: center;
     font-family: 'Times New Roman', Times, serif;
-    letter-spacing: 1px;
+    padding:0 55px;
 }
 
 [tag=texto2] p::first-letter,
 h2::first-letter {
     text-transform: uppercase;
+}
+
+.btn-add-cart {
+    position: absolute;
+    right: 8px;
+    top: 43px;
+    color: white;
+    border-radius:8px;
+    background-color: transparent;
+    font-size: 1.2rem;
+    border-width: 1px;
+    padding: 5px 10px;
+    border: 0;
+
+}
+
+.btn-add-cart:hover{
+    color: yellow;
+    border-style: inset;
+}
+.btn-add-cart:active{
+    color: orange;
+    border-style: inset;
+    background-color:  rgba(40, 38, 42, 0.99);
 }

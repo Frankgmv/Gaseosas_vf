@@ -1,5 +1,6 @@
 :root{
     --color-main:#A20031;
+    --color-main-deg:#a20031d8;
     --color-main-2:#000;
     --color-secund:orange;
     --color-r-1:gray;
@@ -7,6 +8,8 @@
 
     --color-w:#ffff;
     --color-b:#000  ;
+    --color-b-2:#111  ;
     --font-color:#888;
     --font-color-2:#999;
+    --scroll-3:#444;
 }

@@ -1,16 +1,50 @@
 // TODO agregar fondo de nevera abierta 
+import {
+    bebidas
+} from "./datos.js";
 
-url = './assets/img';
+document.addEventListener('DOMContentLoaded', () => {
 
-const bebidas = [
-    { id:1, nombre:'MrTea', descripcion:'pal almuerzo', path_url:'/colombiana.png', destacado:true},
-    { id:2, nombre:'Colombiana', descripcion:'sabe mejor que el put.. fizz', path_url:'/colombiana.png', destacado:false},
-    { id:3, nombre:'Coca Cola', descripcion:'La buena pa la diabetes pa', path_url:'/cocaCola.png', destacado:false},
-    { id:4, nombre:'Fanta', descripcion:'Pa la inalcanzable, descontinuada', path_url:'/fanta.png', destacado:false},
-    { id:5, nombre:'Cuatro', descripcion:'Pa la michelaita heladita', path_url:'/cuatro.png', destacado:false},
-    { id:6, nombre:'Manzana', descripcion:'Como esta no hay dos pa\'', path_url:'/manzana.png', destacado:false},
-    { id:7, nombre:'Hatsu', descripcion:'Sabe a basura pero buenísimo', path_url:'/hatsu.png', destacado:false},
-    { id:8, nombre:'Pepsi', descripcion:'Pa ahorrar un barrita en la Coca-Cola', path_url:'/pepsi.png', destacado:false},
-    { id:9, nombre:'Sprite', descripcion:'Pa hacer chirrinchi del fino', path_url:'/sprite.png', destacado:false},
-    { id:10, nombre:'Hit Mora', descripcion:'Pa combinar con la empanadita', path_url:'/hitmora.png', destacado:false},
-]
+    const buttonCarrito = document.querySelector("#carritoButton");
+    const containerProductosCarrito = document.querySelector('#mostrarProductos')
+    const containerDestacados = document.querySelector("#contenedorDestacados");
+    const containerProductos = document.querySelector("#contenedorProductos");
+
+    buttonCarrito.addEventListener('click', () => {
+        containerProductosCarrito.classList.toggle('mostrar');
+    })
+    let destacados = bebidas.filter(bebidas => bebidas.destacado == true)
+    console.log(destacados);
+    destacados.forEach(bebidaDestacada =>{
+         bebidaDestacada = `
+        <div tag="container-circle">
+            <a href="#${bebidaDestacada.id}">
+                <div tag="giro"></div>
+                <div tag="img"><img src="./assets/img${bebidaDestacada.path_url}"></div>
+                <div tag="texto">
+                    <h3>${bebidaDestacada.nombre}</h3>
+                    <p>${bebidaDestacada.descripcion}</p>
+                </div>
+            </a>
+        </div>`;
+        containerDestacados.innerHTML += bebidaDestacada;   
+    })
+
+
+    bebidas.forEach(bebida => {
+        let producto = `
+        <div tag="producto" id="${bebida.id}">
+            <img src="./assets/img${bebida.path_url}" alt="">
+            <div tag="contenedor">
+                <div tag="fondo"></div>
+                <div tag="texto2">
+                    <h2>${bebida.nombre}</h2>
+                    <p>${bebida.descripcion}</p>
+                    <button class="btn-add-cart" title="Agregar al carrito"><i class="ri-shopping-cart-line"></i></button>
+                </div>
+            </div>
+        </div>`
+        containerProductos.innerHTML += producto;
+    })
+
+})

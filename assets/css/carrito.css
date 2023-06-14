@@ -1,0 +1,78 @@
+.container-carrito{
+    position: absolute;
+    right: 10px;
+    max-width: 600px;
+    min-width: 290px;
+    max-height: 400px;
+    width: 500px;
+    background-color: var(--color-b-2);
+    z-index: 11;
+    transition: all .3s ease-in-out;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    color: white;
+    top: -240px;
+    transition: all .5s ease-in-out;
+}
+
+.container-carrito::-webkit-scrollbar{
+    width: 10px;
+}
+.container-carrito::-webkit-scrollbar-thumb{
+    background-color: var(--scroll-3);
+    border-radius: 15px;
+}
+
+
+.table-carrito{
+    width: 100%;
+    position: relative;
+}
+
+.table-carrito .table-header{
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+
+.table-body{
+    text-align: center;
+}
+
+.table-body tr td:first-child{
+    width: 120px;
+    height: 120px;
+}
+.table-body tr td > img{
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+}
+
+.table-body tr td > button{
+    background-color: transparent;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--color-main);
+    text-shadow: 0 0 1px black;
+    transition: all .15 ease-out;
+    text-shadow: 1px 1px 1px #999;
+}
+
+.table-body tr td > button:hover{
+    color: rgb(184, 26, 26);
+}
+
+.table-body tr td > button:active{
+    color: rgb(185, 14, 14);
+    text-shadow: 0px 0px 2px #fff;
+}
+
+
+
+
+.mostrar{
+    top: 170px;
+}

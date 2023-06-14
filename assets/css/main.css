@@ -3,6 +3,7 @@
 @import url(destacados.css);
 @import url(productos.css);
 @import url(footer.css);
+@import url(carrito.css);
 
 *{
     margin: 0;
@@ -12,4 +13,13 @@
 
 body{
     background-color: var(--color-b);
+}
+
+body::-webkit-scrollbar{
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: var(--scroll-3);
+    border-radius: 15px;
 }

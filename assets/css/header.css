@@ -3,6 +3,7 @@
     height: 170px;
     background-color: var(--color-main);
     position: relative;
+    z-index: 20;
 }
 
 [tag=cartel] {
@@ -85,7 +86,7 @@
     transition: all .2s ease-in;
 }
 
-#carrito{
+#carritoButton{
     position: absolute;
     background-color: transparent;
     right: 10px;
@@ -95,7 +96,7 @@
     transition: all .2s ease-in-out;
 }
 
-#carrito:hover{
+#carritoButton:hover{
     color: yellow;
     transform: skew(5deg, 3deg);
     text-shadow: 1px 1px 6px black;
