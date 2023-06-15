@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
@@ -27,29 +28,23 @@
                 <a href="#destacados">Destacados</a>
                 <a href="#productos">Productos</a>
                 <a href="#contacto">Contacto</a>
-                <a href="#" id="carritoButton"><i class="ri-shopping-cart-line"></i></a>
+                <a href="#" title="Carrito" id="carritoButton"><i class="ri-shopping-cart-line"></i></a>
             </nav>
         </div>
     </header>
     <div class="container-carrito" id="mostrarProductos">
-        <table class="table-carrito" >
+        <table class="table-carrito">
             <thead class="table-header">
                 <tr>
                     <td class="not">imagen</td>
                     <td class="not">nombre</td>
                     <td><i class="ri-price-tag-line"></i></td>
                     <td><i class="ri-hashtag"> </i></td>
-                    <td class="not"></td>
+                    <td class="not"><button><i class="ri-delete-bin-6-line"></i>Vaciar</button></td>
                 </tr>
             </thead>
             <tbody class="table-body" id="productosCarrito">
-                <tr>
-                    <td><img class="img-carrito"  src="./assets/img/colombiana.png" width="100px" height="auto"></td>
-                    <td>Nombre del producto</td>
-                    <td>$100</td>
-                    <td>2</td>
-                    <td><button><i class="ri-close-circle-fill" title="Eliminar"></i></button></td>
-                </tr>
+
             </tbody>
         </table>
     </div>
@@ -78,7 +73,8 @@
             </div>
         </div>
     </div>
-    <script src="assets/js/app.js" type="module"></script>
+    <script src="assets/js/app.js" ></script>
+    <!-- <script src="assets/js/functions.js"></script> -->
 </body>
 
 </html>
