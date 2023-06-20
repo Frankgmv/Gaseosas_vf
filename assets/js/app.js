@@ -81,41 +81,17 @@ const bebidas = [{
     },
 ];
 
-carrito = [{
-    idProducto: 1,
-    nombre: 'MrTea',
-    descripcion: 'pal almuerzo',
-    path_url: '/mrtea.png',
-    precio: 2500,
-    destacado: true,
-    cantidad: 1
-}, ]
-
-const AddProducto = (idProducto) => {
-
-    // let producto = bebidas.find(product => product.id == idProducto);
-
-    // console.log(producto);
-    // // carrito.push(producto);
-    // // console.log(carrito);
-
-    let isRepeat = bebidas.some(bebida => bebida.id == idProducto);
-    console.log(isRepeat);
-
-    if(isRepeat){
-        carrito.push(producto);
-    }else{
-        let i = carrito.find(producto => producto.id == idProducto);
-        carrito[i].cantidad++;
-    }
-}
+carrito = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    const buttonCarrito = document.querySelector("#carritoButton");
-    const containerProductosCarrito = document.querySelector('#mostrarProductos')
     const containerDestacados = document.querySelector("#contenedorDestacados");
     const containerProductos = document.querySelector("#contenedorProductos");
+
+    // carrito
     const productosCarrito = document.querySelector('#productosCarrito')
+    const containerProductosCarrito = document.querySelector('#mostrarProductos')
+    const buttonCarrito = document.querySelector("#carritoButton");
+
     buttonCarrito.addEventListener('click', () => {
         containerProductosCarrito.classList.toggle('mostrar');
     })
@@ -138,30 +114,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
     bebidas.forEach(bebida => {
         let producto = `
-        <div tag="producto" id="producto${bebida.idProducto}">
+        <div class="bebida" tag="producto" id="producto${bebida.idProducto}">
             <img src="./assets/img${bebida.path_url}" alt="">
             <div tag="contenedor">
                 <div tag="fondo"></div>
                 <div tag="texto2">
                     <h2>${bebida.nombre}</h2>
                     <p>${bebida.descripcion}</p>
-                    <button class="btn-add-cart" onClick="AddProducto(${bebida.idProducto})"  title="Agregar al carrito"><i class="ri-shopping-cart-line"></i></button>
+                    <button class="btn-add-cart" onClick="agregarProducto(${bebida.idProducto})" title="Agregar al carrito"><i class="ri-shopping-cart-line"></i></button>
                 </div>
             </div>
         </div>`
         containerProductos.innerHTML += producto;
     })
 
-    carrito.forEach(producto => {
-        let elemento = `
-        <tr>
-        <td><img class="img-carrito"  src="./assets/img/${producto.path_url}" width="100px" height="auto"></td>
-        <td>${producto.nombre}</td>
-        <td>$${producto.precio}</td>
-        <td>1</td>
-        <td><button title="Eliminar"><i class="ri-close-circle-fill"></i></button></td>
-        </tr>
-        `;
-        productosCarrito.innerHTML += elemento;
-    })
+    
 })
+
+// ! Funciones
+
+// agregar productos
+function agregarProducto (id){
+    let productoSeleccionado = bebidas.find(bebida => bebida.idProducto == id)
+    carrito.push(productoSeleccionado)
+    
+    console.log(carrito);
+
+    productosCarrito.innerHTML = ""
+
+    LlenarCarrito();
+} 
+
+// mostrar carrito
+
+function LlenarCarrito(){
+
+    carrito.forEach(producto => {
+        let contenido = `
+            <tr>
+                <td><img class="img-carrito"  src="./assets/img/${producto.path_url}" width="100px" height="auto"></td>
+                <td>${producto.nombre}</td>
+                <td>$${producto.precio}</td>
+                <td>1</td>
+                <td><button title="Eliminar"><i class="ri-close-circle-fill"></i></button></td>
+            </tr>
+            `;
+        
+        productosCarrito.innerHTML += contenido;
+    })
+}
+

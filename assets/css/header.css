@@ -39,6 +39,7 @@
     text-shadow: 1px 1px .5px var(--font-color-w);
     width: 100%;
 }
+
 [tag=title] {
     font-size: 3rem;
     color: var(--color-w);
@@ -46,8 +47,10 @@
     transform: skewX(-20deg);
     transition: box-shadow .4s ease-in-out;
 }
+
 [tag=title]:hover {
-    box-shadow: 2px 3px 5px 6px var(--color-w);
+    /* box-shadow: 2px 3px 5px 6px var(--color-w); */
+    text-shadow: 2px 3px 6px var(--color-b);
 }
 
 [tag=logo]{
