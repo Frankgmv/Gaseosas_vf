@@ -104,8 +104,7 @@
     transform: skew(5deg, 3deg);
     text-shadow: 1px 1px 6px black;
 }
-
-
+    
 [tag=container] a:hover{
     color: var(--color-w);
     text-shadow: 1px 1px solid var(--color-secund);

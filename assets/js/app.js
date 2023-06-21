@@ -81,9 +81,11 @@ const bebidas = [{
     },
 ];
 
-carrito = [];
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    carrito = [];
+    // productos
     const containerDestacados = document.querySelector("#contenedorDestacados");
     const containerProductos = document.querySelector("#contenedorProductos");
 
@@ -91,6 +93,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const productosCarrito = document.querySelector('#productosCarrito')
     const containerProductosCarrito = document.querySelector('#mostrarProductos')
     const buttonCarrito = document.querySelector("#carritoButton");
+    const buttonVaciarCarrito = document.querySelector('#vaciar')
+    buttonVaciarCarrito.addEventListener('click',()=>{  
+        carrito = [];
+        productosCarrito.innerHTML = "";
+    })
 
     buttonCarrito.addEventListener('click', () => {
         containerProductosCarrito.classList.toggle('mostrar');
@@ -127,8 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>`
         containerProductos.innerHTML += producto;
     })
-
-
 
 
 })
@@ -188,7 +193,6 @@ function eliminarProducto(id) {
     carrito.pop(i);
     console.log("borrando producto "+ id);
 }
-
 
 function quitarProductoHTML(id, container){
     productosCarrito.removeChild(container)

@@ -90,12 +90,10 @@
 }
 
 .vaciar:hover{
-    /* color: var(--color-secund);
-    background-color: var(--color-main-deg); */
     color: var(--color-b-2);
     background-color: var(--color-w);
-    
 }
 .vaciar:active{
-
+    background-color: var(--color-secund);
+    scale: .97;
 }
