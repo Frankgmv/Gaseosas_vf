@@ -128,26 +128,27 @@ document.addEventListener('DOMContentLoaded', () => {
         containerProductos.innerHTML += producto;
     })
 
-    
+
+
+
 })
 
 // ! Funciones
 
 // agregar productos
-function agregarProducto (id){
+function agregarProducto(id) {
     let productoSeleccionado = bebidas.find(bebida => bebida.idProducto == id)
     carrito.push(productoSeleccionado)
-    
-    console.log(carrito);
 
     productosCarrito.innerHTML = ""
 
     LlenarCarrito();
-} 
+    ObtenerDato();
+}
 
 // mostrar carrito
 
-function LlenarCarrito(){
+function LlenarCarrito() {
 
     carrito.forEach(producto => {
         let contenido = `
@@ -156,11 +157,39 @@ function LlenarCarrito(){
                 <td>${producto.nombre}</td>
                 <td>$${producto.precio}</td>
                 <td>1</td>
-                <td><button title="Eliminar"><i class="ri-close-circle-fill"></i></button></td>
+                <td class="eliminar-producto"><button  id-producto="${producto.idProducto}" title="Eliminar"><i class="ri-close-circle-fill"></i></button></td>
             </tr>
             `;
-        
+
         productosCarrito.innerHTML += contenido;
     })
 }
 
+function ObtenerDato() {
+
+    productosCarrito.childNodes.forEach(producto => {
+
+        producto.addEventListener('click', (e) => {
+            if(e.target.classList.contains("ri-close-circle-fill")){
+
+                const button = e.target.parentElement;
+                const trPadre = button.parentElement.parentElement;
+                const idProducto = parseInt(button.getAttribute('id-producto'));
+                trPadre.classList.add('borrada');
+                eliminarProducto(idProducto);
+                quitarProductoHTML(idProducto, trPadre);
+            }
+        })
+    })
+}
+
+function eliminarProducto(id) {
+    let i = carrito.findIndex(producto => producto.idProducto == id);
+    carrito.pop(i);
+    console.log("borrando producto "+ id);
+}
+
+
+function quitarProductoHTML(id, container){
+    productosCarrito.removeChild(container)
+}

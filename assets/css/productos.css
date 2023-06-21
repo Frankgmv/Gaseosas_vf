@@ -28,11 +28,12 @@
     background-color: var(--color-w);
     overflow: hidden;
     border-radius: 20px;
-    transition: box-shadow .15s ease-in-out;
+    transition: all .15s ease-in-out;
 }
 
 [tag=c_productos] [tag=producto]:hover {
-    box-shadow: 1px 1px 18px 1px var(--color-w);
+    box-shadow: 1px 1px 7px 1px var(--color-secund);
+    transform: skew(.6deg, .3deg);
 }
 
 
