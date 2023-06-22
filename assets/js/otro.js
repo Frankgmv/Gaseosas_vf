@@ -9,5 +9,4 @@ function Verificar (array, persona){
     
 }
 
-
-Verificar(personas, {id:2, name:"Frank"})
+Verificar(personas, {id:2, name:"Frank"});

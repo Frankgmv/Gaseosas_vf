@@ -135,8 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>`
         containerProductos.innerHTML += producto;
     })
-
-
 })
 
 // ! Funciones
@@ -199,5 +197,5 @@ function quitarProductoHTML(id, container) {
 }
 
 function hayRepetidos(ArrayCarrito, bebida) {
-
+    // code here
 }
