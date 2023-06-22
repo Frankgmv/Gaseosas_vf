@@ -97,3 +97,8 @@
     background-color: var(--color-secund);
     scale: .97;
 }
+
+td.not:last-child{
+    display: flex;
+    justify-content: center;
+}

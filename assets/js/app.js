@@ -85,6 +85,7 @@ const bebidas = [{
 document.addEventListener('DOMContentLoaded', () => {
 
     carrito = [];
+
     // productos
     const containerDestacados = document.querySelector("#contenedorDestacados");
     const containerProductos = document.querySelector("#contenedorProductos");
@@ -94,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const containerProductosCarrito = document.querySelector('#mostrarProductos')
     const buttonCarrito = document.querySelector("#carritoButton");
     const buttonVaciarCarrito = document.querySelector('#vaciar')
-    buttonVaciarCarrito.addEventListener('click',()=>{  
+    buttonVaciarCarrito.addEventListener('click', () => {
         carrito = [];
         productosCarrito.innerHTML = "";
     })
@@ -144,9 +145,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function agregarProducto(id) {
     let productoSeleccionado = bebidas.find(bebida => bebida.idProducto == id)
     carrito.push(productoSeleccionado)
-
-    productosCarrito.innerHTML = ""
-
+    productosCarrito.innerHTML = " "
+    //TODO function para eliminar repetidos hayRepetidos(carrito, productoSeleccionado);
     LlenarCarrito();
     ObtenerDato();
 }
@@ -175,7 +175,7 @@ function ObtenerDato() {
     productosCarrito.childNodes.forEach(producto => {
 
         producto.addEventListener('click', (e) => {
-            if(e.target.classList.contains("ri-close-circle-fill")){
+            if (e.target.classList.contains("ri-close-circle-fill")) {
 
                 const button = e.target.parentElement;
                 const trPadre = button.parentElement.parentElement;
@@ -191,9 +191,13 @@ function ObtenerDato() {
 function eliminarProducto(id) {
     let i = carrito.findIndex(producto => producto.idProducto == id);
     carrito.pop(i);
-    console.log("borrando producto "+ id);
+    console.log("borrando producto " + id);
 }
 
-function quitarProductoHTML(id, container){
+function quitarProductoHTML(id, container) {
     productosCarrito.removeChild(container)
+}
+
+function hayRepetidos(ArrayCarrito, bebida) {
+
 }
