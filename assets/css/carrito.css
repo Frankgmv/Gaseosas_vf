@@ -15,10 +15,6 @@
     transition: all .5s ease-in-out;
 }
 
-.borrada{
-    opacity: .3;
-}
-
 .container-carrito::-webkit-scrollbar{
     width: 10px;
 }
@@ -101,4 +97,8 @@
 td.not:last-child{
     display: flex;
     justify-content: center;
+}
+
+.ri-close-circle-fill, .vaciar, .btn-add-cart{
+    cursor: pointer;
 }

@@ -27,8 +27,7 @@
 }
 
 [tag=cartel]:hover [tag=text-cartel] {
-    transform-origin: center center;
-    transform: rotate(-1deg);
+    transform: rotate(-6deg);
 }
 
 

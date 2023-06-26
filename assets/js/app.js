@@ -1,125 +1,46 @@
 // TODO agregar fondo de nevera abierta 
-const bebidas = [{
-        idProducto: 1,
-        nombre: 'MrTea',
-        descripcion: 'pal almuerzo',
-        path_url: '/mrtea.png',
-        precio: 2500,
-        destacado: true
-    },
-    {
-        idProducto: 2,
-        nombre: 'Colombiana',
-        descripcion: 'sabe mejor que el put.. fizz',
-        path_url: '/colombiana.png',
-        precio: 1900,
-        destacado: false
-    },
-    {
-        idProducto: 3,
-        nombre: 'Coca Cola',
-        descripcion: 'La buena pa la diabetes pa',
-        path_url: '/cocaCola.png',
-        precio: 3100,
-        destacado: true
-    },
-    {
-        idProducto: 4,
-        nombre: 'Fanta',
-        descripcion: 'Pa la inalcanzable, descontinuada',
-        path_url: '/fanta.png',
-        precio: 1900,
-        destacado: false
-    },
-    {
-        idProducto: 5,
-        nombre: 'Cuatro',
-        descripcion: 'Pa la michelaita heladita',
-        path_url: '/cuatro.png',
-        precio: 2400,
-        destacado: false
-    },
-    {
-        idProducto: 6,
-        nombre: 'Manzana',
-        descripcion: 'Como esta no hay dos pa\'',
-        path_url: '/manzana.jpg',
-        precio: 2300,
-        destacado: true
-    },
-    {
-        idProducto: 7,
-        nombre: 'Hatsu',
-        descripcion: 'Sabe a basura pero buenísimo',
-        path_url: '/hatsu.jpg',
-        precio: 2400,
-        destacado: false
-    },
-    {
-        idProducto: 8,
-        nombre: 'Pepsi',
-        descripcion: 'Pa ahorrar un barrita en la Coca-Cola',
-        path_url: '/pepsi.png',
-        precio: 1200,
-        destacado: false
-    },
-    {
-        idProducto: 9,
-        nombre: 'Sprite',
-        descripcion: 'Pa hacer chirrinchi del fino',
-        path_url: '/sprite.png',
-        precio: 2100,
-        destacado: false
-    },
-    {
-        idProducto: 10,
-        nombre: 'Hit Mora',
-        descripcion: 'Pa combinar con la empanadita',
-        path_url: '/hitmora.png',
-        precio: 2800,
-        destacado: true
-    },
-];
-
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    carrito = [];
-
-    // productos
+    // variables de productos
     const containerDestacados = document.querySelector("#contenedorDestacados");
     const containerProductos = document.querySelector("#contenedorProductos");
 
-    // carrito
+    // variables de carrito
     const productosCarrito = document.querySelector('#productosCarrito')
     const containerProductosCarrito = document.querySelector('#mostrarProductos')
     const buttonCarrito = document.querySelector("#carritoButton");
     const buttonVaciarCarrito = document.querySelector('#vaciar')
+
+    // Manipular frontend carrito 
     buttonVaciarCarrito.addEventListener('click', () => {
         carrito = [];
-        productosCarrito.innerHTML = "";
+        limpiarCarrito();
     })
 
     buttonCarrito.addEventListener('click', () => {
         containerProductosCarrito.classList.toggle('mostrar');
     })
 
+    // Añadir destacados
     const destacados = bebidas.filter(bebidas => bebidas.destacado == true)
-    destacados.forEach(bebidaDestacada => {
-        bebidaDestacada = `
+    destacados.forEach(bebida => {
+        let {idProducto, path_url, nombre, descripcion} = bebida;
+        let bebidaDestacada = `
         <div tag="container-circle">
-            <a href="#producto${bebidaDestacada.idProducto}">
+            <a href="#producto${idProducto}">
                 <div tag="giro"></div>
-                <div tag="img"><img src="./assets/img${bebidaDestacada.path_url}"></div>
+                <div tag="img"><img src="./assets/img${path_url}"></div>
                 <div tag="texto">
-                    <h3>${bebidaDestacada.nombre}</h3>
-                    <p>${bebidaDestacada.descripcion}</p>
+                    <h3>${nombre}</h3>
+                    <p>${descripcion}</p>
                 </div>
             </a>
         </div>`;
         containerDestacados.innerHTML += bebidaDestacada;
     })
 
+    // Añadir Productos
     bebidas.forEach(bebida => {
         let producto = `
         <div class="bebida" tag="producto" id="producto${bebida.idProducto}">
@@ -135,32 +56,60 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>`
         containerProductos.innerHTML += producto;
     })
-})
+    
+});
+
 
 // ! Funciones
 
 // agregar productos
 function agregarProducto(id) {
+
     let productoSeleccionado = bebidas.find(bebida => bebida.idProducto == id)
-    carrito.push(productoSeleccionado)
-    productosCarrito.innerHTML = " "
-    //TODO function para eliminar repetidos hayRepetidos(carrito, productoSeleccionado);
+    
+    if (carrito.some(producto => producto.idProducto === productoSeleccionado.idProducto)) {
+        carrito.forEach(product => {
+            if(product.idProducto === id){
+                product.cantidad++;
+            }
+        })
+    } else {
+        carrito = [...carrito, {cantidad: 1,...productoSeleccionado}]
+    }
+
+    limpiarCarrito()
     LlenarCarrito();
-    ObtenerDato();
+    agregarEliminador();
 }
 
-// mostrar carrito
+function agregarEliminador() {
+
+    productosCarrito.childNodes.forEach(producto => {
+
+        producto.addEventListener('click', (e) => {
+            if (e.target.classList.contains("ri-close-circle-fill")) {
+                const button = e.target.parentElement;
+                const trPadre = button.parentElement.parentElement;
+                const idProducto = parseInt(button.getAttribute('id-producto'));
+                quitarProductoHTML(idProducto, trPadre);
+            }
+        })
+    })
+}
+
 
 function LlenarCarrito() {
 
     carrito.forEach(producto => {
+        let { path_url, nombre, precio, idProducto, cantidad } = producto;
+
         let contenido = `
             <tr>
-                <td><img class="img-carrito"  src="./assets/img/${producto.path_url}" width="100px" height="auto"></td>
-                <td>${producto.nombre}</td>
-                <td>$${producto.precio}</td>
-                <td>1</td>
-                <td class="eliminar-producto"><button  id-producto="${producto.idProducto}" title="Eliminar"><i class="ri-close-circle-fill"></i></button></td>
+                <td><img class="img-carrito"  src="./assets/img/${path_url}" width="100px" height="auto"></td>
+                <td>${nombre}</td>
+                <td>$${precio}</td>
+                <td>${cantidad}</td>
+                <td class="eliminar-producto"><button  id-producto="${idProducto}" title="Eliminar"><i class="ri-close-circle-fill"></i></button></td>
             </tr>
             `;
 
@@ -168,34 +117,19 @@ function LlenarCarrito() {
     })
 }
 
-function ObtenerDato() {
-
-    productosCarrito.childNodes.forEach(producto => {
-
-        producto.addEventListener('click', (e) => {
-            if (e.target.classList.contains("ri-close-circle-fill")) {
-
-                const button = e.target.parentElement;
-                const trPadre = button.parentElement.parentElement;
-                const idProducto = parseInt(button.getAttribute('id-producto'));
-                trPadre.classList.add('borrada');
-                eliminarProducto(idProducto);
-                quitarProductoHTML(idProducto, trPadre);
-            }
-        })
-    })
-}
-
-function eliminarProducto(id) {
-    let i = carrito.findIndex(producto => producto.idProducto == id);
-    carrito.pop(i);
-    console.log("borrando producto " + id);
-}
 
 function quitarProductoHTML(id, container) {
+    eliminarProducto(id);
     productosCarrito.removeChild(container)
 }
 
-function hayRepetidos(ArrayCarrito, bebida) {
-    // code here
+function eliminarProducto(id) {
+    let UpdateCarrito = carrito.filter(producto => producto.id !== id)
+    carrito = UpdateCarrito;
+}
+
+function limpiarCarrito() {
+    while (productosCarrito.firstChild) {
+        productosCarrito.removeChild(productosCarrito.firstChild);
+    }
 }
