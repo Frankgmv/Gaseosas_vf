@@ -1,5 +1,7 @@
 // TODO agregar fondo de nevera abierta 
 
+carrito = [];
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // variables de productos
