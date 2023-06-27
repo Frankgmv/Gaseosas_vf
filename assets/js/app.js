@@ -1,6 +1,5 @@
 // TODO agregar fondo de nevera abierta 
 
-
 document.addEventListener('DOMContentLoaded', () => {
     carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     cargar()
@@ -8,17 +7,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function cargar() {
 
-    // variables de productos
+    //? variables de productos
     const containerDestacados = document.querySelector("#contenedorDestacados");
     const containerProductos = document.querySelector("#contenedorProductos");
 
-    // variables de carrito
+    //! variables de carrito
     const productosCarrito = document.querySelector('#productosCarrito')
     const containerProductosCarrito = document.querySelector('#mostrarProductos')
     const buttonCarrito = document.querySelector("#carritoButton");
     const buttonVaciarCarrito = document.querySelector('#vaciar')
 
-    // Manipular frontend carrito 
+    //? Manipular frontend carrito 
+
     buttonVaciarCarrito.addEventListener('click', () => {
         carrito = [];
         limpiarCarrito();
@@ -29,7 +29,8 @@ function cargar() {
         containerProductosCarrito.classList.toggle('mostrar');
     })
 
-    // Añadir destacados
+    //? Añadir destacados
+
     const destacados = bebidas.filter(bebidas => bebidas.destacado == true)
     destacados.forEach(bebida => {
         let {
@@ -52,7 +53,7 @@ function cargar() {
         containerDestacados.innerHTML += bebidaDestacada;
     })
 
-    // Añadir Productos
+    //? Añadir Productos
     bebidas.forEach(bebida => {
         let producto = `
         <div class="bebida" tag="producto" id="producto${bebida.idProducto}">
@@ -75,7 +76,8 @@ function cargar() {
 
 // ! Funciones
 
-// agregar productos
+//* agregar productos
+
 function agregarProducto(id) {
 
     let productoSeleccionado = bebidas.find(bebida => bebida.idProducto == id)
@@ -113,9 +115,8 @@ function agregarEliminador() {
     })
 }
 
-
+//?    
 function LlenarCarrito() {
-
     carrito.forEach(producto => {
         let {
             path_url,
@@ -136,9 +137,8 @@ function LlenarCarrito() {
             `;
 
         productosCarrito.innerHTML += contenido;
-    })
+    }) 
     agregarEliminador();
-
 }
 
 
