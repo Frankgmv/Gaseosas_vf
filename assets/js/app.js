@@ -1,8 +1,12 @@
 // TODO agregar fondo de nevera abierta 
 
-carrito = [];
 
 document.addEventListener('DOMContentLoaded', () => {
+    carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    cargar()
+});
+
+function cargar() {
 
     // variables de productos
     const containerDestacados = document.querySelector("#contenedorDestacados");
@@ -18,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     buttonVaciarCarrito.addEventListener('click', () => {
         carrito = [];
         limpiarCarrito();
+        UpdateStorage()
     })
 
     buttonCarrito.addEventListener('click', () => {
@@ -27,7 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Añadir destacados
     const destacados = bebidas.filter(bebidas => bebidas.destacado == true)
     destacados.forEach(bebida => {
-        let {idProducto, path_url, nombre, descripcion} = bebida;
+        let {
+            idProducto,
+            path_url,
+            nombre,
+            descripcion
+        } = bebida;
         let bebidaDestacada = `
         <div tag="container-circle">
             <a href="#producto${idProducto}">
@@ -58,8 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>`
         containerProductos.innerHTML += producto;
     })
-    
-});
+    LlenarCarrito()
+}
+
 
 
 // ! Funciones
@@ -68,17 +79,20 @@ document.addEventListener('DOMContentLoaded', () => {
 function agregarProducto(id) {
 
     let productoSeleccionado = bebidas.find(bebida => bebida.idProducto == id)
-    
+
     if (carrito.some(producto => producto.idProducto === productoSeleccionado.idProducto)) {
         carrito.forEach(product => {
-            if(product.idProducto === id){
+            if (product.idProducto === id) {
                 product.cantidad++;
             }
         })
     } else {
-        carrito = [...carrito, {cantidad: 1,...productoSeleccionado}]
+        carrito = [...carrito, {
+            cantidad: 1,
+            ...productoSeleccionado
+        }]
     }
-
+    UpdateStorage()    
     limpiarCarrito()
     LlenarCarrito();
     agregarEliminador();
@@ -103,7 +117,13 @@ function agregarEliminador() {
 function LlenarCarrito() {
 
     carrito.forEach(producto => {
-        let { path_url, nombre, precio, idProducto, cantidad } = producto;
+        let {
+            path_url,
+            nombre,
+            precio,
+            idProducto,
+            cantidad
+        } = producto;
 
         let contenido = `
             <tr>
@@ -117,6 +137,8 @@ function LlenarCarrito() {
 
         productosCarrito.innerHTML += contenido;
     })
+    agregarEliminador();
+
 }
 
 
@@ -126,12 +148,16 @@ function quitarProductoHTML(id, container) {
 }
 
 function eliminarProducto(id) {
-    let UpdateCarrito = carrito.filter(producto => producto.id !== id)
+    let UpdateCarrito = carrito.filter(producto => producto.idProducto !== id)
     carrito = UpdateCarrito;
+    UpdateStorage()
 }
 
 function limpiarCarrito() {
     while (productosCarrito.firstChild) {
         productosCarrito.removeChild(productosCarrito.firstChild);
     }
+}
+function UpdateStorage() {
+    localStorage.setItem('carrito', JSON.stringify(carrito))
 }
