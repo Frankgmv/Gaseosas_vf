@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALmacenes VF</title>
+    <title>Bubble VFK</title>
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://github.com/solomon-fibonacci/react-basicons#react-basicons">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -16,21 +17,23 @@
 </head>
 
 <body>
-    <header class="header">
-        <div tag="header">
-            <div tag="cartel"><span tag="text-cartel">Colección 2023</span></div>
-            <div tag="container-info">
-                <div tag="title">Almacén VF</div>
-                <img src="./assets/img/logo.png" alt="logo page" tag="logo">
-            </div>
-            <nav tag="container">
-                <a href="#destacados">Destacados</a>
-                <a href="#productos">Productos</a>
-                <a href="#contacto">Contacto</a>
-                <a href="#" title="Carrito" id="carritoButton"><i class="ri-shopping-cart-line"></i></a>
-            </nav>
-        </div>
+    <header>
+        <a href="#">
+            <h1>Bubble VFK</h1>
+        </a>
+        <nav class="container_link">
+            <a href="" class="links">Inicio</a>
+            <a href="#mostrarProductos" class="links">Destacados</a>
+            <a href="" class="links">Productos</a>
+            <a href="" class="btn-nav">Contactenos</a>
+            <a href="#" title="Carrito" id="carritoButton"><i class="ri-shopping-cart-line links"></i></a>
+        </nav>
     </header>
+
+    <div class="container-mensaje">
+        <h1>¿Qué mejor que una buena bebida?</h1>
+    </div>
+
     <div class="container-carrito" id="mostrarProductos">
         <table class="table-carrito">
             <thead class="table-header">
@@ -39,7 +42,8 @@
                     <td class="not">nombre</td>
                     <td><i class="ri-price-tag-line"></i></td>
                     <td><i class="ri-hashtag"> </i></td>
-                    <td class="not"><button class="vaciar" id="vaciar">vaciar <i class="ri-delete-bin-6-line"></i></button></td>
+                    <td class="not"><button class="vaciar" id="vaciar">vaciar <i
+                                class="ri-delete-bin-6-line"></i></button></td>
                 </tr>
             </thead>
             <tbody class="table-body" id="productosCarrito">
@@ -55,24 +59,28 @@
         <div tag="c_productos" id="contenedorProductos"></div>
     </div>
     <div id="contacto">
-        <h2 tag="title-d">contáctenos</h2>
-        <div tag="c_contacto">
-            <div tag="mapa">
+        <h2 class="title-d">Contáctenos</h2>
+        <div class="c_contacto">
+            <div class="mapa">
+                <h4 class="subtitle_footer">Mapa</h4>
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126931.98346395853!2d-75.75018845664061!3d6.180989199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46823b07fa76e7%3A0xd858c9c2ddf4b118!2sSENA%20Complejo%20Sur%20Itag%C3%BC%C3%AD!5e0!3m2!1ses!2sco!4v1686062163928!5m2!1ses!2sco"
                     width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div tag="contactos">
-                <a href="#Facebook"><i class="ri-facebook-circle-line"> almacen_vf</i> </a>
-                <a href="#Instagram"><i class="ri-instagram-line"></i> @almacen_vf</a>
-                <a href="#WhatsApp"><i class="ri-whatsapp-line"></i> +57 304 203 0332</a>
-                <a href="#Telefono"><i class="ri-phone-line"></i> 444 2002</a>
+            <div class="redes">
+                <h4 class="subtitle_footer">Redes</h4>
+                <div class="footer_links">
+                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
         </div>
     </div>
-    <script src="assets/js/app.js" ></script>
-    <script src="assets/js/data.js" ></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/data.js"></script>
 </body>
 
 </html>

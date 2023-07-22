@@ -1,6 +1,6 @@
 # Gaseosas_vf
 
-Proyecto colaborativo de diseño en el ambiente de aprendizaje 
+Proyecto colaborativo de diseño en el ambiente de aprendizaje, hola
 
 -- Colaboradores
 

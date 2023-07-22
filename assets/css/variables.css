@@ -1,15 +1,8 @@
-:root{
-    --color-main:#A20031;
-    --color-main-deg:#a20031d8;
-    --color-main-2:#000;
-    --color-secund:orange;
-    --color-r-1:gray;
-    --color-r-2:yellowgreen;
-
-    --color-w:#ffff;
-    --color-b:#000;
-    --color-b-2:#111  ;
-    --font-color:#888;
-    --font-color-2:#999;
-    --scroll-3:#444;
+:root {
+    --navbar-background: #111111;
+    --background: #1a1919;
+    --navbar-text-color: #FFFFFF;
+    --navbar-text-color-2: #BF4342;
+    --scroll-3: #444;
+    --color-1: #e7d7c154;
 }

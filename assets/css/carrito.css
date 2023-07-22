@@ -1,11 +1,11 @@
-.container-carrito{
+.container-carrito {
     position: absolute;
     right: 10px;
     max-width: 600px;
     min-width: 290px;
     max-height: 400px;
     width: 500px;
-    background-color: var(--color-b-2);
+    background-color: #000;
     z-index: 11;
     transition: all .3s ease-in-out;
     overflow-y: scroll;
@@ -15,43 +15,44 @@
     transition: all .5s ease-in-out;
 }
 
-.container-carrito::-webkit-scrollbar{
+.container-carrito::-webkit-scrollbar {
     width: 10px;
 }
-.container-carrito::-webkit-scrollbar-thumb{
+
+.container-carrito::-webkit-scrollbar-thumb {
     background-color: var(--scroll-3);
     border-radius: 15px;
 }
 
-
-.table-carrito{
+.table-carrito {
     width: 100%;
     position: relative;
 }
 
-.table-carrito .table-header, .vaciar{
+.table-carrito .table-header,
+.vaciar {
     text-align: center;
     font-size: large;
     font-weight: bold;
     text-transform: capitalize;
 }
 
-
-.table-body{
+.table-body {
     text-align: center;
 }
 
-.table-body tr td:first-child{
+.table-body tr td:first-child {
     width: 120px;
     height: 120px;
 }
-.table-body tr td > img{
+
+.table-body tr td>img {
     width: 90%;
     height: 90%;
     object-fit: cover;
 }
 
-.table-body tr td > button{
+.table-body tr td>button {
     background-color: transparent;
     border: none;
     font-size: 1.6rem;
@@ -61,20 +62,20 @@
     text-shadow: 1px 1px 1px #999;
 }
 
-.table-body tr td > button:hover{
+.table-body tr td>button:hover {
     color: rgb(184, 26, 26);
 }
 
-.table-body tr td > button:active{
+.table-body tr td>button:active {
     color: rgb(185, 14, 14);
     text-shadow: 0px 0px 2px #fff;
 }
 
-.mostrar{
+.mostrar {
     top: 170px;
 }
 
-.vaciar{
+.vaciar {
     display: flex;
     align-items: center;
     gap: 4px;
@@ -85,20 +86,23 @@
     background-color: transparent;
 }
 
-.vaciar:hover{
+.vaciar:hover {
     color: var(--color-b-2);
     background-color: var(--color-w);
 }
-.vaciar:active{
+
+.vaciar:active {
     background-color: var(--color-secund);
     scale: .97;
 }
 
-td.not:last-child{
+td.not:last-child {
     display: flex;
     justify-content: center;
 }
 
-.ri-close-circle-fill, .vaciar, .btn-add-cart{
+.ri-close-circle-fill,
+.vaciar,
+.btn-add-cart {
     cursor: pointer;
 }
