@@ -8,7 +8,6 @@
     <title>Bubble VFK</title>
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://github.com/solomon-fibonacci/react-basicons#react-basicons">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -17,19 +16,20 @@
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <a href="#">
             <h1>Bubble VFK</h1>
         </a>
-        <nav>
+        <nav id="buttonsContent">
             <a href="" class="links">Inicio</a>
             <a href="#destacados" class="links">Destacados</a>
             <a href="#productos" class="links">Productos</a>
             <a href="#contacto" class="btn-nav">Contáctenos</a>
             <a href="#" title="Carrito" id="carritoButton"><i class="ri-shopping-cart-line links"></i></a>
         </nav>
+        <span class="burgerButton" id="burgerButton"><i class="ri-menu-3-line"></i></span>
     </header>
-
+    <span class="buttonUp" id="buttonUp"><i class="ri-arrow-up-line"></i></span>
     <div class="container-mensaje">
         <h1>¿Qué mejor que una buena bebida?</h1>
     </div>
@@ -82,6 +82,7 @@
     </div>
     <script src="assets/js/app.js"></script>
     <script src="assets/js/data.js"></script>
+    <script src="assets/js/interactive.js"></script>
 </body>
 
 </html>

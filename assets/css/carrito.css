@@ -3,7 +3,7 @@
     right: 10px;
     max-width: 600px;
     min-width: 290px;
-    max-height: 400px;
+    max-height: 395px;
     width: 500px;
     background-color: #000;
     z-index: 10;
@@ -15,9 +15,8 @@
 }
 
 .mostrar {
-    top: 70px;
+    top: 62px;
 }
-
 
 .container-carrito::-webkit-scrollbar {
     width: 10px;
@@ -39,6 +38,9 @@
     font-size: large;
     font-weight: bold;
     text-transform: capitalize;
+}
+button.vaciar:hover{
+    color: #eb9a9a;
 }
 
 .table-body {

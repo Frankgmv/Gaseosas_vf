@@ -27,10 +27,11 @@
 }
 
 .bebida {
-    flex-grow: 1;
-    flex-shrink: 1;
+    flex-grow: 3;
+    flex-shrink: 3;
     width: 350px;
     margin: 10px;
+    min-width: 200px;
     max-width: 600px;
     height: 350px;
     overflow: hidden;

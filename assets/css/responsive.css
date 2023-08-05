@@ -1,19 +1,70 @@
+@media screen and (max-width:520px) {
+
+
+
+    h2 .title-d{
+        font-size: 15px !important;
+    }
+
+    body::-webkit-scrollbar {
+        width: 5px;
+    }
+    
+
+    .container-carrito{
+        width: 100%;
+        font-size: 13px;
+    }
+
+    .container-carrito .header-carrito{
+        font-size: 15px;
+    }
+
+    .container-carrito .table-body img{
+        max-width: 70%;
+    }
+
+
+    .container-carrito::-webkit-scrollbar {
+        width: 2px;
+    }
+
+    .card_destacados {
+        border-radius: 20% 0 20% 0;
+        width: 150px !important;
+        margin: 10px;
+        height: 150px !important;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .card_destacados .texto p{
+        display: none;
+    }
+    
+
+}
+
+
 @media screen and (max-width:500px) {
 
-    .card_destacados{
+    .card_destacados {
         height: 200px;
         width: 200px;
     }
-    
-    #contacto{
+
+    #contacto {
         text-align: center;
     }
+
     .subtitle_footer {
         padding: 5px 0;
     }
-    .redes{
+
+    .redes {
         width: 100%;
     }
+
     .mapa {
         padding: 10px;
         width: 100%;
@@ -23,11 +74,63 @@
     .footer_links a {
         margin: 20px 10px 20px 0;
     }
-    
+
 }
 
 @media screen and (max-width:700px) {
-    nav{
-        display: none;
+    *{
+        font-size: 14px;
     }
+    nav#buttonsContent {
+        display: none;
+        position: absolute;
+        margin: 0px;
+        top: 62px;
+        width: 100%;
+        z-index: 20;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        background-color: var(--navbar-background);
+        align-items: center;
+        gap: 3px;
+        right: 0px;
+    }
+    
+    .mostrarMenu{
+        display: flex !important;
+    }  
+    .mostrar2{
+        top: 63px !important;
+    }
+    .mostrar{
+        top: 100px;
+    }
+
+
+    .btn-nav,
+    .btn-nav:hover {
+        background-color: var(--background);
+        padding: 0px;
+        margin-top: 0;
+        background-color: transparent;
+    }
+
+    .btn-nav:hover {
+        color: var(--navbar-text-color-2);
+    }
+
+    .burgerButton {
+        display: block;
+    }
+
+     
+
+}
+
+@media screen and (max-width:367px) {
+    
+    .mostrar{
+        top: 120px;
+    }
+
 }

@@ -8,3 +8,14 @@
     --scroll-3: #444444;
     --color-1: #11100f81;
 }
+
+
+@keyframes arriba {
+    to{
+        transform: translateY(-7px);
+    }
+
+    from{
+        transform: translateY(0px);
+    }
+}

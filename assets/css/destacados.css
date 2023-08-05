@@ -43,13 +43,12 @@
 .card_destacados .texto {
     display: flex;
     flex-direction: column;
-    gap: 3px;
     width: 100%;
     height: 100%;
     right: 0;
     bottom: -100%;
     position: absolute;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(1px);
     color: var(--background);
     align-items: center;
     text-align: center;
@@ -59,14 +58,21 @@
     transition: all 0.35s ease-in-out;
     font-weight: bolder;
     text-shadow: 0 0 1px white;
+    font-weight: 400;
 }
 .card_destacados .texto h3{   
     text-shadow: 0 0 2px lightgreen;
-    color: var(--bcb-2);
+    color: white;
+    backdrop-filter: blur(1px);
+    padding: 6px;
+    border-radius: 10px 10px 0 0px;
 }
 .card_destacados .texto p{   
-    color: var(--navbar-background);
-    text-shadow: 0 0 1px white;
+    backdrop-filter: blur(1px);
+    padding: 10px;
+    border-radius: 10px 0;
+    color: white;
+    text-shadow: 1px 1px 4px var(--bcb-2);
 }
 
 .card_destacados:hover .texto {

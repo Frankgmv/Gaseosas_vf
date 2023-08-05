@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         limpiarCarrito();
     })
 
+
     buttonCarrito.addEventListener('click', () => {
         containerProductosCarrito.classList.toggle('mostrar');
     })
