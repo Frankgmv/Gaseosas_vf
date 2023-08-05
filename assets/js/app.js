@@ -1,5 +1,7 @@
 // TODO agregar fondo de nevera abierta 
 
+carrito = [];
+
 document.addEventListener('DOMContentLoaded', () => {
     carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     cargar()
@@ -25,6 +27,7 @@ function cargar() {
         UpdateStorage()
     })
 
+
     buttonCarrito.addEventListener('click', () => {
         containerProductosCarrito.classList.toggle('mostrar');
     })
@@ -33,18 +36,12 @@ function cargar() {
 
     const destacados = bebidas.filter(bebidas => bebidas.destacado == true)
     destacados.forEach(bebida => {
-        let {
-            idProducto,
-            path_url,
-            nombre,
-            descripcion
-        } = bebida;
+        let { idProducto, path_url, nombre, descripcion } = bebida;
         let bebidaDestacada = `
-        <div tag="container-circle">
+        <div class="card_destacados">
             <a href="#producto${idProducto}">
-                <div tag="giro"></div>
-                <div tag="img"><img src="./assets/img${path_url}"></div>
-                <div tag="texto">
+            <img src="./assets/img${path_url}">
+                <div class="texto">
                     <h3>${nombre}</h3>
                     <p>${descripcion}</p>
                 </div>
@@ -58,20 +55,16 @@ function cargar() {
         let producto = `
         <div class="bebida" tag="producto" id="producto${bebida.idProducto}">
             <img src="./assets/img${bebida.path_url}" alt="">
-            <div tag="contenedor">
-                <div tag="fondo"></div>
-                <div tag="texto2">
-                    <h2>${bebida.nombre}</h2>
+                <div class="texto2">
+                    <h3>${bebida.nombre}</h3>
                     <p>${bebida.descripcion}</p>
-                    <button class="btn-add-cart" onClick="agregarProducto(${bebida.idProducto})" title="Agregar al carrito"><i class="ri-shopping-cart-line"></i></button>
+                    <button class="btn-add-cart" onClick="agregarProducto(${bebida.idProducto})" title="Agregar al carrito">Agregar  <i class="ri-shopping-cart-line"></i></button>
                 </div>
-            </div>
         </div>`
         containerProductos.innerHTML += producto;
     })
     LlenarCarrito()
 }
-
 
 
 // ! Funciones
@@ -93,6 +86,7 @@ function agregarProducto(id) {
             cantidad: 1,
             ...productoSeleccionado
         }]
+        carrito = [...carrito, { cantidad: 1, ...productoSeleccionado }]
     }
     UpdateStorage()    
     limpiarCarrito()

@@ -1,15 +1,21 @@
-:root{
-    --color-main:#A20031;
-    --color-main-deg:#a20031d8;
-    --color-main-2:#000;
-    --color-secund:orange;
-    --color-r-1:gray;
-    --color-r-2:yellowgreen;
+:root {
+    --navbar-background: #111111;
+    --background: #1a1919;
+    --navbar-text-color: #FFFFFF;
+    --navbar-text-color-2: #BF4342;
+    --bcb: #b85c45;
+    --bcb-2: #164eb4;
+    --scroll-3: #444444;
+    --color-1: #11100f81;
+}
 
-    --color-w:#ffff;
-    --color-b:#000;
-    --color-b-2:#111  ;
-    --font-color:#888;
-    --font-color-2:#999;
-    --scroll-3:#444;
+
+@keyframes arriba {
+    to{
+        transform: translateY(-7px);
+    }
+
+    from{
+        transform: translateY(0px);
+    }
 }

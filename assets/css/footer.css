@@ -1,45 +1,63 @@
-[tag="c_contacto"]{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 20px;
-}
-[tag="mapa"],[tag="contactos"]{
-    flex-grow: 1;
-    flex-shrink: 1;
-}
-
-
-[tag="mapa"]{
-    height: 280px;
-    width: 500px;
-}
-
-[tag="contactos"]{
-    height: 130px;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10px;
-
-}
-
-[tag="contactos"] a{
+#contacto {
+    width: 100%;
+    font-family: 'Space Mono', monospace;
     text-align: center;
-    padding-top: 5px;
-    text-decoration: none;
-    font-size: 22px;
-    width: 40%;
-    height: 40px;
-    color: var(--color-w);
-    transition: all .2s ease-in-out;
-    font-weight: bold;
-    border-radius: 12px;
+    color: var(--navbar-text-color-2);
+    background-color: var(--background);
+    margin-top: 30px;
 }
 
-[tag="contactos"] a:hover{
-    color: var(--color-main);
-    box-shadow: 0 0 2px 4px var(--color-w);
+.title-d {
+    font-size: 20px;
+}
+
+.c_contacto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.subtitle_footer {
+    font-size: 15px;
+    padding: 20px 0;
+}
+
+.mapa{
+    width: 40%;
+    padding: 40px;
+    flex-basis: 40%;
+    flex-grow: 1;
+    margin: 0 10px;
+}
+
+.redes{
+    padding-top: 40px;
+    flex-shrink: 2;
+    flex-grow: 1;
+}
+
+.mapa iframe {
+    width: 100%;
+    margin-bottom: 60px;
+ 
+}
+
+.footer_links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: var(--navbar-background);
+    margin: 90px 10px 10px 0;
+    text-align: center;
+    align-items: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: var(--navbar-text-color-2);
+    transition: all 0.5s ease;
+}
+
+.footer_links a:hover {
+    color: var(--navbar-background);
+    background-color: var(--navbar-text-color-2);
+    transform: translateY(-10px);
 }

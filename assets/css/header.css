@@ -1,112 +1,133 @@
-
-[tag=header] {
-    height: 170px;
-    background-color: var(--color-main);
-    position: relative;
-    z-index: 20;
-}
-
-[tag=cartel] {
-    box-sizing: border-box;
-    position: absolute;
-    top: 21px;
-    left: -70px;
-    background-color: var(--color-w);
-    color: var(--color-b);
-    width: 320px;
-    height: 50px;
-    rotate: -45deg;
+header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    transition: border .3s ease-in;
-    border: 4px solid transparent;
-}
-
-[tag=cartel]:hover {
-    border: 4px solid var(--color-secund);
-}
-
-[tag=cartel]:hover [tag=text-cartel] {
-    transform: rotate(-6deg);
-}
-
-
-[tag=text-cartel] {
-    margin-left: 60px;
-    font-size: 1.3rem;
-    font-weight: bold;
-    text-shadow: 1px 1px .5px var(--font-color-w);
-    width: 100%;
-}
-
-[tag=title] {
-    font-size: 3rem;
-    color: var(--color-w);
-    padding: 13px;
-    transform: skewX(-20deg);
-    transition: box-shadow .4s ease-in-out;
-}
-
-[tag=title]:hover {
-    /* box-shadow: 2px 3px 5px 6px var(--color-w); */
-    text-shadow: 2px 3px 6px var(--color-b);
-}
-
-[tag=logo]{
-    display: inline-block;
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-}
-[tag=container-info] {
-    display: flex;
-    justify-content: center;
-    align-items: center ;
-    gap:0 100px;
-    padding-top: 10px;
-}
-
-[tag=container] {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    gap: 0 36px;
-    margin-top: 20px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-
-[tag=container] a{
-    text-decoration: none;
-    font-size: 1.4rem;
-    color: var(--color-w);
-    padding: 4px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    transition: all .2s ease-in;
-}
-
-#carritoButton{
-    position: absolute;
-    background-color: transparent;
-    right: 10px;
-    font-size: 2rem;
-    font-weight: bolder;
+    background-color: var(--navbar-background);
+    color: var(--navbar-text-color);
+    z-index: 100;
     padding: 10px;
-    transition: all .2s ease-in-out;
+    position: relative;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
 }
 
-#carritoButton:hover{
-    color: yellow;
-    transform: skew(5deg, 3deg);
-    text-shadow: 1px 1px 6px black;
+header a {
+    color: var(--navbar-text-color);
+    text-decoration: none;
 }
+
+header a h1 {
+    display: flex;
+    font-size: 15px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 2px solid var(--navbar-text-color);
+}
+
+.burgerButton{
+    display: none;
+    font-size: 20px;
+    color: white;
+}
+
+nav {
+    padding: 7px 0;
+}
+
+nav a {
+    font-size: 15px;
+    margin: 0px 5px;
+}
+
+.links:hover, .burgerButton:hover  {
+    transition: all 0.5s ease;
+    scale: 1.05;
+    color: var(--navbar-text-color-2);
+}
+
+.btn-nav {
+    background-color: var(--background);
+    padding: 10px;
+    margin-top: -7px;
+    border-radius: 20px;
+}
+
+.btn-nav:hover {
+    transition: all 0.5s;
+    scale: 1.03;
+    background-color: var(--navbar-text-color-2);
+}
+
+nav a i {
+    font-size: 20px;
+    color: var(--navbar-text-color);
+}
+
+.container-mensaje {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    text-transform: capitalize;
+    font-family: 'Megrim', cursive;
+    font-size: 20px;
+    background-color: var(--navbar-text-color);
+    transition: all 1s ease-in-out;
+}
+
+.container-mensaje:hover{
+    background-color: #9e5f5fc9;
+    color: antiquewhite;
+}
+.container-mensaje:hover h1{
+    transition: scale 3s ease-in-out;
+    scale: 1.1;
+}
+
+.buttonUp{
+    display: none;
+    place-items: center;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    z-index: 20;
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+    border: 2px outset black;
+    border-radius: 5px;
+    background-color: rgba(10, 8, 8, 0.781);
+    text-align: center;
+    padding: 5px;
+    transition: all .27s ease-in-out;
+    animation: arriba infinite ease-in-out 1.2s alternate-reverse;
+}
+
+.buttonUp:hover{
+    bottom: 21px;
+    background-color: rgb(248, 232, 232);
+    color: black;
+    transform: scale(1.089);
+}
+
+header a h1 {
+    animation: hueRotate 2.4s alternate-reverse infinite;
+}
+
+@keyframes hueRotate {
+    to {
+        scale: 1;
+    }
     
-[tag=container] a:hover{
-    color: var(--color-w);
-    text-shadow: 1px 1px solid var(--color-secund);
-    background-color: var(--color-main-2);
-
+    
+    from {
+        scale: 1.1;
+        color: var(--navbar-text-color-2);
+    }
 }
