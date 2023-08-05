@@ -1,4 +1,4 @@
-#destacados {
+#destacados{
     width: 100%;
     font-family: 'Space Mono', monospace;
     margin: 0;
@@ -12,8 +12,8 @@
 #destacados h2 {
     display: flex;
     font-size: 40px;
-    margin-top: 20px;
-    color: var(--text-color-1);
+    margin: 25px 0;
+    color: var(--navbar-text-color-2);
     align-items: center;
     text-align: center;
     justify-content: center;
@@ -21,16 +21,15 @@
 
 #contenedorDestacados {
     display: flex;
-    margin: 20px auto;
-    justify-content: space-evenly;
     flex-wrap: wrap;
-    text-align: center;
+    justify-content: space-evenly;
 }
 
 .card_destacados {
-    width: 20%;
+    border-radius: 20% 0 20% 0;
+    width: 210px;
     margin: 10px;
-    height: 350px;
+    height: 300px;
     overflow: hidden;
     position: relative;
 }
@@ -50,18 +49,27 @@
     right: 0;
     bottom: -100%;
     position: absolute;
-    background: var(--color-1);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(4px);
     color: var(--background);
     align-items: center;
     text-align: center;
     justify-content: center;
-    font-weight: 700;
     font-size: 15px;
     padding: 10px 20px;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.35s ease-in-out;
+    font-weight: bolder;
+    text-shadow: 0 0 1px white;
+}
+.card_destacados .texto h3{   
+    text-shadow: 0 0 2px lightgreen;
+    color: var(--bcb-2);
+}
+.card_destacados .texto p{   
+    color: var(--navbar-background);
+    text-shadow: 0 0 1px white;
 }
 
 .card_destacados:hover .texto {
+    background: var(--color-1);
     bottom: 0;
 }

@@ -13,16 +13,33 @@
 
 .c_contacto {
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .subtitle_footer {
     font-size: 15px;
-    margin: 20px 0;
+    padding: 20px 0;
+}
+
+.mapa{
+    width: 40%;
+    padding: 40px;
+    flex-basis: 40%;
+    flex-grow: 1;
+    margin: 0 10px;
+}
+
+.redes{
+    padding-top: 40px;
+    flex-shrink: 2;
+    flex-grow: 1;
 }
 
 .mapa iframe {
+    width: 100%;
     margin-bottom: 60px;
+ 
 }
 
 .footer_links a {
@@ -30,7 +47,7 @@
     height: 40px;
     width: 40px;
     background-color: var(--navbar-background);
-    margin: 55px 10px 10px 0;
+    margin: 90px 10px 10px 0;
     text-align: center;
     align-items: center;
     line-height: 40px;

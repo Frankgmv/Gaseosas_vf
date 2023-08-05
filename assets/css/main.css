@@ -7,6 +7,7 @@
 @import url(productos.css);
 @import url(footer.css);
 @import url(carrito.css);
+@import url(responsive.css);
 
 * {
     margin: 0;

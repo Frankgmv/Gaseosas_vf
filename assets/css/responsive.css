@@ -1,0 +1,33 @@
+@media screen and (max-width:500px) {
+
+    .card_destacados{
+        height: 200px;
+        width: 200px;
+    }
+    
+    #contacto{
+        text-align: center;
+    }
+    .subtitle_footer {
+        padding: 5px 0;
+    }
+    .redes{
+        width: 100%;
+    }
+    .mapa {
+        padding: 10px;
+        width: 100%;
+        order: 2;
+    }
+
+    .footer_links a {
+        margin: 20px 10px 20px 0;
+    }
+    
+}
+
+@media screen and (max-width:700px) {
+    nav{
+        display: none;
+    }
+}
