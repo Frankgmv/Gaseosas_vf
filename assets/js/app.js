@@ -4,7 +4,7 @@ carrito = [];
 
 document.addEventListener('DOMContentLoaded', () => {
     carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    cargar()
+    cargar();
 });
 
 function cargar() {
@@ -86,7 +86,6 @@ function agregarProducto(id) {
             cantidad: 1,
             ...productoSeleccionado
         }]
-        carrito = [...carrito, { cantidad: 1, ...productoSeleccionado }]
     }
     UpdateStorage()    
     limpiarCarrito()
@@ -97,7 +96,6 @@ function agregarProducto(id) {
 function agregarEliminador() {
 
     productosCarrito.childNodes.forEach(producto => {
-
         producto.addEventListener('click', (e) => {
             if (e.target.classList.contains("ri-close-circle-fill")) {
                 const button = e.target.parentElement;
