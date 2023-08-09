@@ -26,7 +26,7 @@ header a h1 {
     border: 2px solid var(--navbar-text-color);
 }
 
-.burgerButton{
+.burgerButton {
     display: none;
     font-size: 20px;
     color: white;
@@ -41,7 +41,8 @@ nav a {
     margin: 0px 5px;
 }
 
-.links:hover, .burgerButton:hover  {
+.links:hover,
+.burgerButton:hover {
     transition: all 0.5s ease;
     scale: 1.05;
     color: var(--navbar-text-color-2);
@@ -76,19 +77,9 @@ nav a i {
     font-family: 'Megrim', cursive;
     font-size: 20px;
     background-color: var(--navbar-text-color);
-    transition: all 1s ease-in-out;
 }
 
-.container-mensaje:hover{
-    background-color: #9e5f5fc9;
-    color: antiquewhite;
-}
-.container-mensaje:hover h1{
-    transition: scale 3s ease-in-out;
-    scale: 1.1;
-}
-
-.buttonUp{
+.buttonUp {
     display: none;
     place-items: center;
     position: fixed;
@@ -109,7 +100,7 @@ nav a i {
     animation: arriba infinite ease-in-out 1.2s alternate-reverse;
 }
 
-.buttonUp:hover{
+.buttonUp:hover {
     bottom: 21px;
     background-color: rgb(248, 232, 232);
     color: black;
@@ -117,15 +108,13 @@ nav a i {
 }
 
 header a h1 {
-    animation: hueRotate .5s alternate-reverse infinite;
+    animation: hueRotate .8s alternate-reverse infinite;
 }
 
 @keyframes hueRotate {
     to {
         scale: 1;
     }
-    
-    
     from {
         scale: 1.1;
         color: var(--navbar-text-color-2);
