@@ -14,9 +14,12 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--background);
-    scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {
